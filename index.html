@@ -16,7 +16,7 @@
       height: 100%;
       font-family: 'Poppins', sans-serif;
       color: #fff;
-      overflow: hidden;
+      overflow-x: hidden;
       background: #000;
     }
 
@@ -35,7 +35,7 @@
       top: 0; left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(120deg, rgba(0,0,0,0.6), rgba(0,10,40,0.7));
+      background: linear-gradient(135deg, rgba(0,0,0,0.75), rgba(40,0,60,0.8));
       z-index: -2;
     }
 
@@ -44,9 +44,9 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100%;
+      min-height: 100vh;
       text-align: center;
-      padding: 20px;
+      padding: 30px 15px;
       animation: fadeIn 1.5s ease forwards;
     }
 
@@ -56,20 +56,20 @@
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.08);
       border-radius: 25px;
-      padding: 40px 30px;
-      backdrop-filter: blur(12px);
-      border: 2px solid rgba(0, 200, 255, 0.4);
-      box-shadow: 0 0 30px rgba(0, 200, 255, 0.3);
+      padding: 40px 25px;
+      backdrop-filter: blur(15px);
+      border: 2px solid rgba(255, 204, 0, 0.3);
+      box-shadow: 0 0 40px rgba(140, 0, 255, 0.4);
       max-width: 850px;
       width: 100%;
-      transition: all 0.3s ease;
+      transition: 0.4s ease;
     }
 
     .card:hover {
       transform: scale(1.02);
-      box-shadow: 0 0 50px rgba(0, 200, 255, 0.5);
+      box-shadow: 0 0 60px rgba(255, 204, 0, 0.5);
     }
 
     .profile-pic {
@@ -77,31 +77,31 @@
       height: 150px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid #00d9ff;
-      box-shadow: 0 0 25px #00cfff;
+      border: 3px solid #ffcc00;
+      box-shadow: 0 0 30px #a300ff;
       animation: pulse 2s infinite;
       margin-bottom: 20px;
     }
 
     @keyframes pulse {
-      0% { box-shadow: 0 0 15px #00cfff; }
-      50% { box-shadow: 0 0 35px #00cfff; }
-      100% { box-shadow: 0 0 15px #00cfff; }
+      0% { box-shadow: 0 0 20px #a300ff; }
+      50% { box-shadow: 0 0 40px #ffcc00; }
+      100% { box-shadow: 0 0 20px #a300ff; }
     }
 
     h1 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 2.8em;
-      background: linear-gradient(90deg, #00f0ff, #0072ff, #b400ff);
+      font-size: 2.6em;
+      background: linear-gradient(90deg, #ffcc00, #b400ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 25px rgba(0,255,255,0.2);
+      text-shadow: 0 0 20px rgba(255,255,255,0.15);
       margin-bottom: 10px;
     }
 
     h3 {
       font-size: 1.3em;
-      color: #aaa;
+      color: #ddd;
       margin-bottom: 25px;
       letter-spacing: 2px;
     }
@@ -119,19 +119,19 @@
       border-radius: 15px;
       padding: 20px;
       transition: 0.3s ease;
-      border: 1px solid rgba(0, 200, 255, 0.3);
+      border: 1px solid rgba(255, 204, 0, 0.3);
     }
 
     .info-box:hover {
-      background: rgba(0, 200, 255, 0.15);
+      background: rgba(255, 204, 0, 0.12);
       transform: scale(1.02);
-      box-shadow: 0 0 25px rgba(0, 200, 255, 0.3);
+      box-shadow: 0 0 25px rgba(180, 0, 255, 0.3);
     }
 
     .info-box h2 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 1.4em;
-      color: #00d9ff;
+      font-size: 1.3em;
+      color: #ffcc00;
       margin-bottom: 10px;
     }
 
@@ -147,38 +147,59 @@
     .telegram-btn {
       display: inline-block;
       margin-top: 35px;
-      padding: 12px 30px;
-      background: linear-gradient(135deg, #00c6ff, #0072ff, #b400ff);
+      padding: 13px 35px;
+      background: linear-gradient(135deg, #ffcc00, #b400ff);
       border-radius: 50px;
       color: #fff;
       text-decoration: none;
       font-size: 1.1em;
-      letter-spacing: 1px;
       font-weight: 600;
       transition: 0.3s;
-      box-shadow: 0 0 25px #00cfff;
+      box-shadow: 0 0 25px #b400ff;
     }
 
     .telegram-btn:hover {
-      transform: scale(1.07);
-      box-shadow: 0 0 40px #00cfff;
+      transform: scale(1.08);
+      box-shadow: 0 0 40px #ffcc00;
     }
 
     footer {
       margin-top: 30px;
       font-size: 0.9em;
-      color: #bbb;
+      color: #ccc;
       opacity: 0.8;
       letter-spacing: 1px;
+      text-align: center;
     }
 
-    @media (max-width: 600px) {
+    /* Responsive Fix */
+    @media (max-width: 768px) {
       .card {
-        padding: 30px 20px;
+        padding: 25px 20px;
       }
       h1 { font-size: 2em; }
       h3 { font-size: 1em; }
-      .info-box h2 { font-size: 1.2em; }
+      .profile-pic {
+        width: 120px;
+        height: 120px;
+      }
+      .info-box ul li {
+        font-size: 0.95em;
+      }
+      .telegram-btn {
+        padding: 11px 25px;
+        font-size: 1em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 15px;
+      }
+      h1 { font-size: 1.8em; }
+      .card {
+        border-radius: 18px;
+      }
     }
   </style>
 </head>
@@ -209,9 +230,9 @@
         <div class="info-box">
           <h2>About King 👑</h2>
           <ul>
-            <li>A passionate developer mastering automation, bots & UI design.</li>
-            <li>Tech lover who turns imagination into digital creation.</li>
-            <li>Always upgrading skills to rule the digital world.</li>
+            <li>Ruling the digital world with creativity and precision.</li>
+            <li>Master in building automated systems and elegant designs.</li>
+            <li>Focused, smart, and unstoppable — true digital royalty.</li>
           </ul>
         </div>
 
@@ -221,8 +242,8 @@
             <li>⚙️ Telegram Bot Development</li>
             <li>💻 HTML, CSS, JS</li>
             <li>🐍 Python Automation</li>
-            <li>🎨 UI/UX & Frontend Design</li>
-            <li>🚀 Fast Execution & Clean UI</li>
+            <li>🎨 UI/UX & Web Design</li>
+            <li>🚀 Strategic Automation</li>
           </ul>
         </div>
       </div>
@@ -230,7 +251,7 @@
       <a href="https://t.me/notcatchable" class="telegram-btn" target="_blank">👑 Connect on Telegram</a>
     </div>
 
-    <footer>© 2025 UTTAM SINGH | Designed with 💙 Power</footer>
+    <footer>© 2025 UTTAM SINGH | All Rights Reserved 👑</footer>
   </div>
 
 </body>
