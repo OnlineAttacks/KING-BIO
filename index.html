@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>👑 UTTAM SINGH | KING</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <title>👑 UTTAM SINGH | THE KING</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -14,7 +14,7 @@
 
     html, body {
       height: 100%;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Inter', sans-serif;
       color: #fff;
       overflow-x: hidden;
       background: #000;
@@ -35,8 +35,34 @@
       top: 0; left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, rgba(0,0,0,0.75), rgba(40,0,60,0.8));
+      background: radial-gradient(circle at center, rgba(0,0,30,0.8), rgba(0,0,0,0.95));
       z-index: -2;
+    }
+
+    /* Glowing Particle Background */
+    .particles {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    .particle {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: radial-gradient(circle, #00e0ff, #b400ff);
+      border-radius: 50%;
+      animation: float 10s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes float {
+      from { transform: translateY(100vh) scale(0.8); opacity: 0.4; }
+      to { transform: translateY(-10vh) scale(1.5); opacity: 0.9; }
     }
 
     .container {
@@ -46,7 +72,7 @@
       justify-content: center;
       min-height: 100vh;
       text-align: center;
-      padding: 30px 15px;
+      padding: 20px;
       animation: fadeIn 1.5s ease forwards;
     }
 
@@ -58,56 +84,61 @@
     .card {
       background: rgba(255, 255, 255, 0.08);
       border-radius: 25px;
-      padding: 40px 25px;
-      backdrop-filter: blur(15px);
-      border: 2px solid rgba(255, 204, 0, 0.3);
-      box-shadow: 0 0 40px rgba(140, 0, 255, 0.4);
+      padding: 40px 30px;
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(0, 255, 255, 0.25);
+      box-shadow: 0 0 35px rgba(180, 0, 255, 0.25);
       max-width: 850px;
       width: 100%;
-      transition: 0.4s ease;
+      transition: all 0.4s ease;
     }
 
     .card:hover {
       transform: scale(1.02);
-      box-shadow: 0 0 60px rgba(255, 204, 0, 0.5);
+      box-shadow: 0 0 50px rgba(0, 255, 255, 0.4);
     }
 
     .profile-pic {
-      width: 150px;
-      height: 150px;
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid #ffcc00;
-      box-shadow: 0 0 30px #a300ff;
-      animation: pulse 2s infinite;
+      border: 3px solid #00e0ff;
+      box-shadow: 0 0 35px #b400ff;
       margin-bottom: 20px;
+      animation: pulse 2s infinite alternate;
     }
 
     @keyframes pulse {
-      0% { box-shadow: 0 0 20px #a300ff; }
-      50% { box-shadow: 0 0 40px #ffcc00; }
-      100% { box-shadow: 0 0 20px #a300ff; }
+      from { box-shadow: 0 0 20px #00e0ff; }
+      to { box-shadow: 0 0 40px #b400ff; }
     }
 
     h1 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 2.6em;
-      background: linear-gradient(90deg, #ffcc00, #b400ff);
+      font-size: 2.8em;
+      background: linear-gradient(90deg, #00e0ff, #b400ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 20px rgba(255,255,255,0.15);
-      margin-bottom: 10px;
+      text-shadow: 0 0 30px rgba(0,255,255,0.3);
+      margin-bottom: 8px;
+      letter-spacing: 2px;
+      animation: glowText 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes glowText {
+      from { text-shadow: 0 0 10px #00e0ff; }
+      to { text-shadow: 0 0 25px #b400ff; }
     }
 
     h3 {
-      font-size: 1.3em;
-      color: #ddd;
-      margin-bottom: 25px;
-      letter-spacing: 2px;
+      font-size: 1.2em;
+      color: #cfcfcf;
+      letter-spacing: 4px;
+      margin-bottom: 30px;
     }
 
     .info-section {
-      margin-top: 20px;
       text-align: left;
       display: flex;
       flex-direction: column;
@@ -115,32 +146,30 @@
     }
 
     .info-box {
-      background: rgba(255, 255, 255, 0.07);
+      background: rgba(255, 255, 255, 0.05);
       border-radius: 15px;
       padding: 20px;
-      transition: 0.3s ease;
-      border: 1px solid rgba(255, 204, 0, 0.3);
+      border: 1px solid rgba(0, 255, 255, 0.3);
+      transition: all 0.3s ease;
     }
 
     .info-box:hover {
-      background: rgba(255, 204, 0, 0.12);
-      transform: scale(1.02);
+      background: rgba(0, 255, 255, 0.12);
+      transform: translateY(-5px);
       box-shadow: 0 0 25px rgba(180, 0, 255, 0.3);
     }
 
     .info-box h2 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 1.3em;
-      color: #ffcc00;
+      font-size: 1.4em;
+      color: #00e0ff;
       margin-bottom: 10px;
+      letter-spacing: 1px;
     }
 
     .info-box ul {
       list-style: none;
       line-height: 1.8;
-    }
-
-    .info-box ul li {
       font-size: 1.05em;
     }
 
@@ -148,58 +177,43 @@
       display: inline-block;
       margin-top: 35px;
       padding: 13px 35px;
-      background: linear-gradient(135deg, #ffcc00, #b400ff);
+      background: linear-gradient(135deg, #00e0ff, #b400ff);
       border-radius: 50px;
       color: #fff;
       text-decoration: none;
       font-size: 1.1em;
       font-weight: 600;
-      transition: 0.3s;
-      box-shadow: 0 0 25px #b400ff;
+      letter-spacing: 1px;
+      transition: 0.3s ease;
+      box-shadow: 0 0 25px #00e0ff;
     }
 
     .telegram-btn:hover {
       transform: scale(1.08);
-      box-shadow: 0 0 40px #ffcc00;
+      box-shadow: 0 0 40px #b400ff;
     }
 
     footer {
-      margin-top: 30px;
+      margin-top: 35px;
       font-size: 0.9em;
-      color: #ccc;
-      opacity: 0.8;
+      color: #bbb;
+      opacity: 0.85;
       letter-spacing: 1px;
-      text-align: center;
     }
 
-    /* Responsive Fix */
+    /* Responsive */
     @media (max-width: 768px) {
       .card {
-        padding: 25px 20px;
+        padding: 30px 20px;
       }
-      h1 { font-size: 2em; }
+      h1 { font-size: 2.2em; }
       h3 { font-size: 1em; }
-      .profile-pic {
-        width: 120px;
-        height: 120px;
-      }
-      .info-box ul li {
-        font-size: 0.95em;
-      }
-      .telegram-btn {
-        padding: 11px 25px;
-        font-size: 1em;
-      }
+      .profile-pic { width: 130px; height: 130px; }
     }
 
     @media (max-width: 480px) {
-      .container {
-        padding: 15px;
-      }
+      .card { border-radius: 18px; }
       h1 { font-size: 1.8em; }
-      .card {
-        border-radius: 18px;
-      }
     }
   </style>
 </head>
@@ -210,11 +224,21 @@
   </video>
   <div class="overlay"></div>
 
+  <!-- Floating Particles -->
+  <div class="particles">
+    <div class="particle" style="left:10%; animation-duration:12s;"></div>
+    <div class="particle" style="left:25%; animation-duration:9s;"></div>
+    <div class="particle" style="left:40%; animation-duration:10s;"></div>
+    <div class="particle" style="left:60%; animation-duration:14s;"></div>
+    <div class="particle" style="left:75%; animation-duration:11s;"></div>
+    <div class="particle" style="left:90%; animation-duration:13s;"></div>
+  </div>
+
   <div class="container">
     <div class="card">
       <img src="file.png" alt="Uttam Singh" class="profile-pic" />
       <h1>👑 UTTAM SINGH</h1>
-      <h3>KING</h3>
+      <h3>THE KING</h3>
 
       <div class="info-section">
         <div class="info-box">
@@ -228,11 +252,11 @@
         </div>
 
         <div class="info-box">
-          <h2>About King 👑</h2>
+          <h2>About the King 👑</h2>
           <ul>
-            <li>Ruling the digital world with creativity and precision.</li>
-            <li>Master in building automated systems and elegant designs.</li>
-            <li>Focused, smart, and unstoppable — true digital royalty.</li>
+            <li>Innovator ruling the code world with vision and style.</li>
+            <li>Crafting automation and digital experiences with perfection.</li>
+            <li>Driven by purpose — crowned by creativity.</li>
           </ul>
         </div>
 
@@ -240,10 +264,10 @@
           <h2>Skills & Power</h2>
           <ul>
             <li>⚙️ Telegram Bot Development</li>
-            <li>💻 HTML, CSS, JS</li>
-            <li>🐍 Python Automation</li>
-            <li>🎨 UI/UX & Web Design</li>
-            <li>🚀 Strategic Automation</li>
+            <li>💻 Python, JS, Web Integration</li>
+            <li>🎨 UI/UX & Motion Design</li>
+            <li>🚀 Automation & Smart Systems</li>
+            <li>🧠 Creative Logic & Execution</li>
           </ul>
         </div>
       </div>
@@ -251,7 +275,7 @@
       <a href="https://t.me/notcatchable" class="telegram-btn" target="_blank">👑 Connect on Telegram</a>
     </div>
 
-    <footer>© 2025 UTTAM SINGH | All Rights Reserved 👑</footer>
+    <footer>© 2025 UTTAM SINGH | Designed with 💫 Royal Energy</footer>
   </div>
 
 </body>
